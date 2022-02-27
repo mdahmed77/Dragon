@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/fontawesome.css" rel="stylesheet" />
+    <link id="styles" href="assets/css/theme.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="board-wrapper">
+        <div class="ultron fullWidth">
+            <div class="board">
+                <div class="panel panel-light completeProfile">
+                    <h3>Welcome to Dragon Dashboard</h3>
+                    <p>Complete your basic information to start using Dragon</p>
+                    <div class="fields">
+                        <div class="form-group">
+                            <textarea name="bio" id="bio" rows="5" class="form-control"></textarea>
+                            <label for="bio">Bio (Optional)</label>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end mt-4">
+                        <a href="completeProfile2.html" class="btn btn-prime dark-text bg-danger me-auto">Back</a>
+                        <a href="dashboard.html" class="btn btn-prime dark-text">Countinue to Dashboard</a>
+                    </div>
+                </div>
+                <div class="footer">
+                    <img src="assets/images/footer.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.fields .form-control').blur(function () {
+                if ($(this).val().length === 0) {
+                    $(this).parent().removeClass('unEmpty');
+                } else {
+                    $(this).parent().addClass('unEmpty');
+                }
+            });
+            $('.fields [type="date"]').blur(function () {
+                if ($(this).val().length === 0) {
+                    $(this).parent().addClass('unEmpty');
+                } else {
+                    $(this).parent().addClass('unEmpty');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
