@@ -155,22 +155,19 @@ select {
     background-repeat: no-repeat;
     background-size: 16px;
 }
-table.dataTable>tbody>tr.child ul.dtr-details>li
-{
-    padding:0px;
-    border:none;
-    & ~ li
-    {
-        border-top:1px solid #f1f1f1;
-        margin-top:8px;
+table.dataTable > tbody > tr.child ul.dtr-details > li {
+    padding: 0px;
+    border: none;
+    & ~ li {
+        border-top: 1px solid #f1f1f1;
+        margin-top: 8px;
         padding-top: 8px;
     }
 }
 table.dataTable > tbody > tr.child ul.dtr-details {
     width: 100%;
 }
-table.dataTable>tbody>tr.child span.dtr-title
-{
+table.dataTable > tbody > tr.child span.dtr-title {
     font-family: bold;
 }
 table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before,
@@ -987,9 +984,8 @@ div.dataTables_wrapper div.dataTables_info {
                 color: #2082cb;
             }
         }
-        textarea.form-control
-        {
-            padding:10px 0 !important;
+        textarea.form-control {
+            padding: 10px 0 !important;
         }
 
         &.unEmpty label {
@@ -1221,6 +1217,45 @@ div.dataTables_wrapper div.dataTables_info {
         .links {
             @media (max-width: 991px) {
                 margin-bottom: 10px;
+            }
+        }
+        .search {
+            display: inline-flex;
+            align-items: center;
+            max-width: 600px;
+            width: 100%;
+            padding: 5px 5px;
+            background-color: #eee;
+            border-radius: 30px;
+            &.light-text {
+                background-color: #22262c;
+                input {
+                    color: #fff;
+                }
+            }
+            input {
+                border: none;
+                background-color: transparent;
+                padding: 0px;
+                width: 100% !important;
+                flex-grow: 1 !important;
+                outline: none;
+                font-size: 14px;
+                font-family: medium;
+                min-width: 275px;
+                padding: 1px 12px 0px;
+            }
+            .btn {
+                font-size: 14px;
+                padding: 0px;
+                border-radius: 50px;
+                min-width: 10px;
+                color: #fff !important;
+                padding: 8px 6px 8px 8px !important;
+                i {
+                    position: relative;
+                    right: -1px;
+                }
             }
         }
     }
@@ -4504,120 +4539,191 @@ img.thumbnail {
     }
 }
 
-
 .property-holder {
     position: relative;
     margin-bottom: 15px;
-  
+
     a {
-      display: block;
-      width: 100%;
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-  
-    .img-holder {
-      position: relative;
-      padding-top: 60%;
-      img {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        z-index: 1;
-        height: 100%;
+        display: block;
         width: 100%;
-        object-fit: cover;
-        object-position: center;
-        transform: scale(1);
-        transition: transform 0.2s ease-out;
-      }
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
     }
-  
-    &:hover {
-      .img-holder {
+
+    .img-holder {
+        position: relative;
+        padding-top: 60%;
         img {
-          transform: scale(1.1);
-        }
-      }
-    }
-  
-    .overTag {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      padding: 3px 8px 1px;
-      background-color: $red;
-      color: #fff;
-      font-family: bold;
-      z-index: 2;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-  
-    .mask {
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
-      width: 100%;
-      height: auto;
-      z-index: 5;
-      color: #fff;
-      background-image: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(0, 0, 0, 0.849) 100%
-      );
-      padding: 50px 10px 10px;
-  
-      h5 {
-        font-family: ub;
-        font-size: 18px;
-        margin: 0px;
-  
-        &:hover {
-          color: $red;
-        }
-      }
-  
-      p {
-        font-size: 12px;
-        margin: 0px;
-        font-family: regular;
-        font-weight: 300;
-      }
-      ul {
-        display: inline-flex;
-        align-items: center;
-        li {
-          font-family: u;
-          font-weight: 300;
-          font-size: 13px;
-          text-align: center;
-          padding: 0px 10px;
-          position: relative;
-          &::before {
-            content: "";
-            height: 75%;
-            width: 0px;
-            border-left: 1px solid #fff;
-            opacity: 0.5;
             position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-          }
-          &:first-child {
-            padding-left: 0;
-            &::before {
-              display: none;
-            }
-          }
-          &:last-child {
-            padding-right: 0;
-          }
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            transform: scale(1);
+            transition: transform 0.2s ease-out;
         }
-      }
     }
-  }
-  
+
+    &:hover {
+        .img-holder {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .overTag {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 3px 8px 1px;
+        background-color: $red;
+        color: #fff;
+        font-family: bold;
+        z-index: 2;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .mask {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: auto;
+        z-index: 5;
+        color: #fff;
+        background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.849) 100%);
+        padding: 50px 10px 10px;
+
+        h5 {
+            font-family: ub;
+            font-size: 18px;
+            margin: 0px;
+
+            &:hover {
+                color: $red;
+            }
+        }
+
+        p {
+            font-size: 12px;
+            margin: 0px;
+            font-family: regular;
+            font-weight: 300;
+        }
+        ul {
+            display: inline-flex;
+            align-items: center;
+            li {
+                font-family: u;
+                font-weight: 300;
+                font-size: 13px;
+                text-align: center;
+                padding: 0px 10px;
+                position: relative;
+                &::before {
+                    content: "";
+                    height: 75%;
+                    width: 0px;
+                    border-left: 1px solid #fff;
+                    opacity: 0.5;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &:first-child {
+                    padding-left: 0;
+                    &::before {
+                        display: none;
+                    }
+                }
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.p-relative {
+    position: relative;
+}
+
+.spacer {
+    padding: 10px;
+    font-weight: 100;
+    font-size: 12px;
+    @media (max-width: 1199px) {
+        padding: 5px;
+    }
+}
+.filters-pallet {
+    height: 100%;
+    width: 100%;
+    z-index: 15;
+    background-color: #e7eaef;
+    display: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding:15px 0px;
+    border-radius: 5px;
+    position: sticky;
+    top: 0px;
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    &::-webkit-scrollbar {
+        width: 7px;
+        background-color: transparent;
+        position: absolute;
+    }
+
+    .form-control
+    {
+        background-color: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $dark;
+        border-radius: 0px;
+        transition: 0.2s linear;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    &.visible {
+        display: block;
+    }
+    h6 {
+        font-size: 18px;
+        font-family: bold;
+        margin: 10px 0 20px;
+    }
+    .form-group {
+        .d-flex {
+            .select2 {
+                width: 100% !important;
+            }
+        }
+        label {
+            display: block;
+        }
+    }
+    @media (max-width: 1199px) {
+        .btn-outline {
+            font-size: 10px;
+            line-height: 12px;
+        }
+    }
+    .ar-checkbox {
+        margin-bottom: 12px;
+    }
+}
