@@ -1199,6 +1199,15 @@ div.dataTables_wrapper div.dataTables_info {
             flex-direction: column-reverse !important;
             padding-bottom: 12px;
             align-items: flex-start;
+            &.anti-reverse
+            {
+                flex-direction: column !important;
+                .d-inline-flex
+                {
+                    margin-top:15px;
+                    width: 100% !important;
+                }
+            }
         }
         h3 {
             margin: 0px;
@@ -4673,8 +4682,8 @@ img.thumbnail {
     overflow-y: scroll;
     padding:15px 0px;
     border-radius: 5px;
-    position: sticky;
-    top: 0px;
+    // position: sticky;
+    // top: 0px;
     // position: absolute;
     // top: 0;
     // right: 0;
@@ -4725,5 +4734,35 @@ img.thumbnail {
     }
     .ar-checkbox {
         margin-bottom: 12px;
+    }
+}
+.f-grow
+{
+    flex-grow: 1;
+}
+.dark
+{
+    .filters-pallet
+    {
+        background-color: #0e1116 !important;
+        .form-control
+        {
+            background-color: #000 !important;
+        }
+    }
+}
+
+.palet-panel
+{
+    @media (max-width:940px) {
+        > .d-flex
+        {
+            flex-direction: column-reverse;
+            .filters-pallet
+            {
+                margin-left:0px !important;
+                margin-bottom: 15px;
+            }
+        }
     }
 }
