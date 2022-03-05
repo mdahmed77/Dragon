@@ -4826,7 +4826,7 @@ h3 {
                 align-items: center;
                 width: 100%;
                 justify-content: space-between;
-                border-bottom: 1px solid rgba(134, 134, 134, 0.10);
+                border-bottom: 1px solid rgba(134, 134, 134, 0.1);
             }
             strong {
                 display: block;
@@ -5161,7 +5161,7 @@ h3 {
             font-size: 14px;
             font-family: medium;
             font-weight: 300;
-            color:$red;
+            color: $red;
             position: relative;
             &::after {
                 content: "";
@@ -5194,6 +5194,147 @@ h3 {
             left: 0;
             height: 100%;
             width: 100%;
+        }
+    }
+}
+
+// Customemr Workspace
+
+.workspace-scroll {
+    overflow: hidden;
+    overflow-x: scroll;
+    min-height: calc(100vh - 230px);
+    @media(max-width:991px)
+    {
+        min-height: calc(100vh - 220px);
+    }
+    &::-webkit-scrollbar {
+        height: 10px;
+        background-color: transparent;
+        position: absolute;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $red;
+        border-radius: 0px;
+        transition: 0.2s linear;
+        border-radius: 10px;
+        border: 3px solid #fff;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+}
+
+.customer-workspace {
+    display: flex;
+    margin-left: -5px;
+    margin-right: -5px;
+    .stackContainer {
+        width: calc(100% / 3.2);
+        min-width: calc(100% / 3.2);
+        padding-left: 5px;
+        padding-right: 5px;
+        @media (max-width: 1360px) {
+            width: calc(100% / 3);
+            min-width: calc(100% / 3);
+        }
+        @media (max-width: 1280px) {
+            width: calc(100% / 2.8);
+            min-width: calc(100% / 2.8);
+        }
+        @media (max-width: 1199px) {
+            width: calc(100% / 2);
+            min-width: calc(100% / 2);
+        }
+        @media (max-width: 576px) {
+            width: calc(100% / 1.2);
+            min-width: calc(100% / 1.2);
+        }
+        @media (max-width: 480px) {
+            width: calc(100%);
+            min-width: calc(100%);
+        }
+    }
+    .stack {
+        border: 1px solid #ddd;
+        // position: sticky;
+        // z-index: 0;
+        // top: 0px;
+
+        .stack-title {
+            font-size: 14px;
+            font-family: bold;
+            font-family: bold;
+            padding: 5px 10px;
+            border-bottom: 1px solid #ddd;
+            background-color: #f7f8fa;
+        }
+        .stack-body {
+            background-color: #f5faff;
+            padding: 10px 10px;
+            min-height: 222px;
+            transition: 0.1s linear;
+            max-height: 460px;
+            overflow: hidden;
+            overflow-y: overlay;
+            &::-webkit-scrollbar {
+                width: 9px;
+                background-color: transparent;
+                position: absolute;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $red;
+                border-radius: 0px;
+                transition: 0.2s linear;
+                border-radius: 10px;
+                border: 3px solid #f5faff;
+                border-top: 11px solid #f5faff;
+                border-bottom: 11px solid #f5faff;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+            }
+        }
+    }
+    .property-holder {
+        margin-bottom: 0px;
+        & ~ .property-holder {
+            margin-top: 10px;
+        }
+    }
+    .property-holder + .dump {
+        margin-top: 10px;
+    }
+    .dump {
+        background-color: #00000015;
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-top: 60%;
+        border-radius: 7px;
+    }
+}
+.panel-dark {
+    .customer-workspace {
+        .stack {
+            border: 1px solid #22262c;
+            .stack-title {
+                border-bottom: 1px solid #22262c;
+                background-color: #22262c;
+            }
+            .stack-body {
+                background-color: #00000033;
+                &::-webkit-scrollbar-thumb {
+                    border-color: #12161a !important;
+                }
+            }
+        }
+    }
+    .workspace-scroll {
+        &::-webkit-scrollbar-thumb {
+            border-color: #1f232c !important;
         }
     }
 }
