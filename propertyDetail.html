@@ -367,7 +367,7 @@
                                     <a href="#">Williamsburg</a>
                                     <span>648 Grand Street, Unit 2D</span>
                                 </div>
-                                <div class="map-holder mb-5 mb-lg-0">
+                                <div class="map-holder">
                                     <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d24842.390000877258!2d-76.98746929674532!3d38.89428304436249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1618738643516!5m2!1sen!2s"
                                         allowfullscreen="" loading="lazy"></iframe>
@@ -376,7 +376,77 @@
                         </div>
                     </div>
                     <div class="col-xl-4 col-12">
-                        <div class="panel panel-light sticky-top">
+                        <div class="agentSearch dark-text">
+                            <button class="btn btn-prime dark-text"><i class="far fa-search"></i></button>
+                            <input type="text" placeholder="Search Agents" />
+                            <div class="propResults agentResults dark-text">
+                                <div class="dark-text propSingle">
+                                    <i class="fal fa-user-circle"></i>
+                                    <div class="propInf">
+                                        <h6>Tim Simps</h6>
+                                        <p>someone@example.com</p>
+                                    </div>
+                                    <button class="btn btn-prime dark-text bg-success">Assign</button>
+                                </div>
+                                <div class="dark-text propSingle">
+                                    <i class="fal fa-user-circle"></i>
+                                    <div class="propInf">
+                                        <h6>John Blake</h6>
+                                        <p>someone@example.com</p>
+                                    </div>
+                                    <button class="btn btn-prime dark-text bg-success">Assign</button>
+                                </div>
+                                <div class="dark-text propSingle">
+                                    <i class="fal fa-user-circle"></i>
+                                    <div class="propInf">
+                                        <h6>Ronie Kelvin</h6>
+                                        <p>someone@example.com</p>
+                                    </div>
+                                    <button class="btn btn-prime dark-text bg-success">Assign</button>
+                                </div>
+                                <div class="dark-text propSingle">
+                                    <i class="fal fa-user-circle"></i>
+                                    <div class="propInf">
+                                        <h6>David Forrest</h6>
+                                        <p>someone@example.com</p>
+                                    </div>
+                                    <button class="btn btn-prime dark-text bg-success">Assign</button>
+                                </div>
+                                <div class="dark-text propSingle">
+                                    <i class="fal fa-user-circle"></i>
+                                    <div class="propInf">
+                                        <h6>Tim Simps</h6>
+                                        <p>someone@example.com</p>
+                                    </div>
+                                    <button class="btn btn-prime dark-text bg-success">Assign</button>
+                                </div>
+                                <div class="dark-text propSingle">
+                                    <i class="fal fa-user-circle"></i>
+                                    <div class="propInf">
+                                        <h6>John Blake</h6>
+                                        <p>someone@example.com</p>
+                                    </div>
+                                    <button class="btn btn-prime dark-text bg-success">Assign</button>
+                                </div>
+                                <div class="dark-text propSingle">
+                                    <i class="fal fa-user-circle"></i>
+                                    <div class="propInf">
+                                        <h6>Ronie Kelvin</h6>
+                                        <p>someone@example.com</p>
+                                    </div>
+                                    <button class="btn btn-prime dark-text bg-success">Assign</button>
+                                </div>
+                                <div class="dark-text propSingle">
+                                    <i class="fal fa-user-circle"></i>
+                                    <div class="propInf">
+                                        <h6>David Forrest</h6>
+                                        <p>someone@example.com</p>
+                                    </div>
+                                    <button class="btn btn-prime dark-text bg-success">Assign</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-light">
                             <table class="table table-bordered table-hover">
                                 <tbody>
                                     <tr>
@@ -452,6 +522,13 @@
         <script src="assets/js/theme.js"></script>
         <script>
             $(document).ready(function () {
+                $('.agentSearch input').on('input', function () {
+                    if (!$(this).val()) {
+                        $(this).next('.propResults').removeClass('searching');
+                    } else {
+                        $(this).next('.propResults').addClass('searching');
+                    }
+                });
                 $("#view-gallary").on("click", function () {
                     $(".gallary .carousel-item.active > a").click();
                 });

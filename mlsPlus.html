@@ -170,8 +170,42 @@
                         </div>
                         <div class="d-inline-flex align-items-center">
                             <div class="search dark-text">
-                                <input type="text" placeholder="Search Properties" />
                                 <button class="btn btn-prime dark-text"><i class="far fa-search"></i></button>
+                                <input type="text" placeholder="Search Properties" />
+                                <div class="propResults dark-text">
+                                    <a href="#" class="dark-text propSingle">
+                                        <img src="assets/images/1.jpg" alt="">
+                                        <div class="propInf">
+                                            <h6>$12,234,300</h6>
+                                            <p>Warnor Street, 45 Alberts Town, London</p>
+                                            <span class="status closed">Closed</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dark-text propSingle">
+                                        <img src="assets/images/2.jpg" alt="">
+                                        <div class="propInf">
+                                            <h6>$12,234,300</h6>
+                                            <p>Warnor Street, 45 Alberts Town, London</p>
+                                            <span class="status active">Active</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dark-text propSingle">
+                                        <img src="assets/images/2.jpg" alt="">
+                                        <div class="propInf">
+                                            <h6>$12,234,300</h6>
+                                            <p>Warnor Street, 45 Alberts Town, London</p>
+                                            <span class="status pending">Pending</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dark-text propSingle">
+                                        <img src="assets/images/2.jpg" alt="">
+                                        <div class="propInf">
+                                            <h6>$12,234,300</h6>
+                                            <p>Warnor Street, 45 Alberts Town, London</p>
+                                            <span class="status pending">Pending</span>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                             <button type="button" class="btn btn-prime dark-text ms-3"
                                 id="filterOpener">Filters</button>
@@ -307,7 +341,7 @@
                                         <li class="page-item"><a href="#" class="page-link">1</a></li>
                                         <li class="page-item active"><a href="#" class="page-link">2</a></li>
                                         <li class="page-item next">
-                                            <a href="#"class="page-link">Next</a>
+                                            <a href="#" class="page-link">Next</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -510,6 +544,14 @@
     <script>
         $(document).ready(function () {
             $(".select2").select2();
+
+            $('.search input').on('input', function () {
+                if (!$(this).val()) {
+                    $(this).next('.propResults').removeClass('searching');
+                } else {
+                    $(this).next('.propResults').addClass('searching');
+                }
+            });
 
             $('#filterOpener').on('click', function () {
                 $('.filters-pallet').addClass('visible');
