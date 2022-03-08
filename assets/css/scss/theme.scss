@@ -5375,12 +5375,11 @@ h3 {
     transition: 0.1s ease;
     &.agentResults {
         max-height: 300px;
-        top: calc(100% + 5px) !important;
     }
     &.searching {
         visibility: visible;
         opacity: 1;
-        top: 100%;
+        top: calc(100% + 5px) !important;
     }
     &::-webkit-scrollbar {
         width: 5px;
@@ -5603,4 +5602,34 @@ h3 {
             }
         }
     }
+}
+
+.loading
+{
+    overflow: hidden !important;
+    .loader
+    {
+        display: block;
+    }
+}
+
+.loader
+{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/loader.svg');
+    background-position: center;
+    background-size: 75px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 10;
+    background-color: #fff;
+    backdrop-filter: blur(10px);
+}
+.dark .loader
+{
+    background-color: #22262c;
 }
