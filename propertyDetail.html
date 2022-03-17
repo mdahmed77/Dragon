@@ -170,7 +170,9 @@
                             </nav>
                         </div>
                         <div class="links">
-                            <a href="#" class="btn btn-prime dark-text"><i class="fal fa-save"></i> Save</a>
+                            <button class="btn btn-prime dark-text" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#notesPane">Notes</button>
+                            <a href="#" class="btn btn-prime dark-text ms-2"><i class="fal fa-save"></i> Save</a>
                             <a href="#" class="btn btn-prime dark-text bg-danger ms-2"><i class="fal fa-share"></i>
                                 Share</a>
                         </div>
@@ -451,7 +453,7 @@
                             <div class="panel-header justify-content-center">
                                 <h3>Assigned Users</h3>
                             </div>
-                            <div class="assigned loading">
+                            <div class="assigned">
                                 <div class="loader"></div>
 
                                 <div class="dark-text singleAgent">
@@ -461,7 +463,8 @@
                                         <p>someone@example.com</p>
                                         <a href="#">Go to Workspace</a>
                                     </div>
-                                    <button class="btn btn-prime dark-text bg-danger"><i class="fal fa-trash-alt"></i></button>
+                                    <button class="btn btn-prime dark-text bg-danger"><i
+                                            class="fal fa-trash-alt"></i></button>
                                 </div>
                                 <div class="dark-text singleAgent">
                                     <i class="fal fa-user-circle"></i>
@@ -470,7 +473,8 @@
                                         <p>someone@example.com</p>
                                         <a href="#">Go to Workspace</a>
                                     </div>
-                                    <button class="btn btn-prime dark-text bg-danger"><i class="fal fa-trash-alt"></i></button>
+                                    <button class="btn btn-prime dark-text bg-danger"><i
+                                            class="fal fa-trash-alt"></i></button>
                                 </div>
                                 <div class="dark-text singleAgent">
                                     <i class="fal fa-user-circle"></i>
@@ -479,7 +483,8 @@
                                         <p>someone@example.com</p>
                                         <a href="#">Go to Workspace</a>
                                     </div>
-                                    <button class="btn btn-prime dark-text bg-danger"><i class="fal fa-trash-alt"></i></button>
+                                    <button class="btn btn-prime dark-text bg-danger"><i
+                                            class="fal fa-trash-alt"></i></button>
                                 </div>
                                 <div class="dark-text singleAgent">
                                     <i class="fal fa-user-circle"></i>
@@ -488,7 +493,8 @@
                                         <p>someone@example.com</p>
                                         <a href="#">Go to Workspace</a>
                                     </div>
-                                    <button class="btn btn-prime dark-text bg-danger"><i class="fal fa-trash-alt"></i></button>
+                                    <button class="btn btn-prime dark-text bg-danger"><i
+                                            class="fal fa-trash-alt"></i></button>
                                 </div>
                                 <div class="dark-text singleAgent">
                                     <i class="fal fa-user-circle"></i>
@@ -497,7 +503,8 @@
                                         <p>someone@example.com</p>
                                         <a href="#">Go to Workspace</a>
                                     </div>
-                                    <button class="btn btn-prime dark-text bg-danger"><i class="fal fa-trash-alt"></i></button>
+                                    <button class="btn btn-prime dark-text bg-danger"><i
+                                            class="fal fa-trash-alt"></i></button>
                                 </div>
                                 <div class="dark-text singleAgent">
                                     <i class="fal fa-user-circle"></i>
@@ -506,7 +513,8 @@
                                         <p>someone@example.com</p>
                                         <a href="#">Go to Workspace</a>
                                     </div>
-                                    <button class="btn btn-prime dark-text bg-danger"><i class="fal fa-trash-alt"></i></button>
+                                    <button class="btn btn-prime dark-text bg-danger"><i
+                                            class="fal fa-trash-alt"></i></button>
                                 </div>
                                 <div class="dark-text singleAgent">
                                     <i class="fal fa-user-circle"></i>
@@ -515,7 +523,8 @@
                                         <p>someone@example.com</p>
                                         <a href="#">Go to Workspace</a>
                                     </div>
-                                    <button class="btn btn-prime dark-text bg-danger"><i class="fal fa-trash-alt"></i></button>
+                                    <button class="btn btn-prime dark-text bg-danger"><i
+                                            class="fal fa-trash-alt"></i></button>
                                 </div>
                                 <div class="dark-text singleAgent">
                                     <i class="fal fa-user-circle"></i>
@@ -524,7 +533,8 @@
                                         <p>someone@example.com</p>
                                         <a href="#">Go to Workspace</a>
                                     </div>
-                                    <button class="btn btn-prime dark-text bg-danger"><i class="fal fa-trash-alt"></i></button>
+                                    <button class="btn btn-prime dark-text bg-danger"><i
+                                            class="fal fa-trash-alt"></i></button>
                                 </div>
                                 <div class="dark-text singleAgent">
                                     <i class="fal fa-user-circle"></i>
@@ -533,7 +543,8 @@
                                         <p>someone@example.com</p>
                                         <a href="#">Go to Workspace</a>
                                     </div>
-                                    <button class="btn btn-prime dark-text bg-danger"><i class="fal fa-trash-alt"></i></button>
+                                    <button class="btn btn-prime dark-text bg-danger"><i
+                                            class="fal fa-trash-alt"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -605,6 +616,66 @@
             <div class="close-map"><i class="far fa-times"></i> Close</div>
         </div>
 
+        <div class="offcanvas offcanvas-end" id="notesPane">
+            <div class="panel panel-light">
+                <div class="panel-header">
+                    <div class="ph-left">
+                        <h3><i class="fal fa-comments-alt"></i> Comments</h3>
+                    </div>
+                    <div class="links">
+                        <button class="btn btn-prime dark-text bg-danger btn-dismiss" type="button"
+                            data-bs-dismiss="offcanvas"><i class="fal fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="comments">
+                    <div class="single">
+                        <div class="flex">
+                            <div class="avatar">
+                                <img src="assets/images/avatar.jpg" alt="">
+                            </div>
+                            <div class="ctext">
+                                <h6 class="dark-text">Person Name
+                                    <div class="dropdown">
+                                        <button type="button" class="btn dropdown-toggle dark-text" data-bs-toggle="dropdown"><i class="fas fa-ellipsis-v"></i></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item delC" href="#"><i class="far fa-trash-alt"></i> Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </h6>
+                                <p class="dark-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <div class="dateTime dark-text">12:20 PM - 13 Dec 2022</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single">
+                        <div class="flex">
+                            <div class="avatar">
+                                <img src="assets/images/avatar.jpg" alt="">
+                            </div>
+                            <div class="ctext">
+                                <h6 class="dark-text">Person Name
+                                    <div class="dropdown">
+                                        <button type="button" class="btn dropdown-toggle dark-text" data-bs-toggle="dropdown"><i class="fas fa-ellipsis-v"></i></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item delC" href="#"><i class="far fa-trash-alt"></i> Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </h6>
+                                <p class="dark-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <div class="dateTime dark-text">12:20 PM - 13 Dec 2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="write">
+                <div class="avatar">
+                    <img src="assets/images/avatar.jpg" alt="">
+                </div>
+                <input type="text" class="form-control dark-text" placeholder="Write a comment">
+                <button class="btn"><i class="fas fa-paper-plane dark-text"></i></button>
+            </div>
+        </div>
 
         <script src="assets/js/jquery.js"></script>
         <script src="assets/js/bootstrap.js"></script>
