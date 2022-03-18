@@ -5674,6 +5674,7 @@ h3 {
                 margin-left: 15px;
                 position: relative;
                 transition: 0.1s linear;
+                min-width: 150px;
                 &::before {
                     content: "";
                     position: absolute;
