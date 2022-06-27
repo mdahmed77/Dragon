@@ -2106,6 +2106,8 @@ div.dataTables_wrapper div.dataTables_info {
     backdrop-filter: blur(1px);
     padding: 15px;
     transition: 0.1s linear;
+    display: flex;
+    align-items: center;
     &.chooseit {
       background-color: #eaffec;
       border: none !important;
@@ -2126,6 +2128,20 @@ div.dataTables_wrapper div.dataTables_info {
       font-family: u;
       color: #464646;
       transition: 0.1s linear;
+    }
+    h6 {
+      font-family: ub;
+      font-size: 20px;
+    }
+    .thumb {
+      margin-right: 10px;
+      height: 45px;
+      width: 45px;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -o-object-position: center;
+      object-position: center;
+      border-radius: 5px;
     }
   }
 }
@@ -2284,18 +2300,16 @@ div.dataTables_wrapper div.dataTables_info {
     border-top: 1px solid #8787873d;
   }
   margin-left: 70px;
-  &:last-child::before
-  {
+  &:last-child::before {
     display: none;
   }
-  &::before
-  {
+  &::before {
     height: 100%;
     left: -40px;
     width: 1px;
     background-color: #8787873d;
-    top:15px;
-    content:"";
+    top: 15px;
+    content: "";
     position: absolute;
     z-index: 5;
   }
@@ -2305,23 +2319,20 @@ div.dataTables_wrapper div.dataTables_info {
     position: absolute;
     left: -65px;
     top: 10px;
-    display:inline-flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
     z-index: 10;
-    &.pin
-    {
+    &.pin {
       background-color: $red;
     }
-    &.mail
-    {
+    &.mail {
       background-color: #1e88e5;
     }
-    img
-    {
+    img {
       height: 28px;
-      width:auto;
+      width: auto;
     }
   }
   .post-head {
@@ -2690,7 +2701,7 @@ div.dataTables_wrapper div.dataTables_info {
     margin-bottom: 15px;
     background-color: #fff;
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.3);
-    transition: .1s linear;
+    transition: 0.1s linear;
     .nav-pills {
       .nav-item {
         flex-grow: unset;
@@ -2747,20 +2758,17 @@ div.dataTables_wrapper div.dataTables_info {
         font-size: 12px;
       }
     }
-    .link
-    {
+    .link {
       font-family: bold;
       font-size: 13px;
       display: inline-block;
       text-decoration: underline !important;
       padding: 5px 0;
       margin-top: 5px;
-      &:hover
-      {
-        color:#00a1ff !important;
+      &:hover {
+        color: #00a1ff !important;
       }
-      & ~ .link
-      {
+      & ~ .link {
         margin-left: 10px;
       }
     }
@@ -3091,12 +3099,9 @@ div.dataTables_wrapper div.dataTables_info {
     }
   }
 }
-.dark
-{
-  .customer-board
-  {
-    .cposts
-    {
+.dark {
+  .customer-board {
+    .cposts {
       background-color: #1a1c20;
     }
   }
@@ -6285,36 +6290,277 @@ h3 {
   }
 }
 
-
-.modal
-{
-  #accordion
-  {
-    .panel
-    {
-      padding:0;
+.modal {
+  #accordion {
+    .panel {
+      padding: 0;
       border: 1px solid #8787873d;
       box-shadow: none;
-      .panel-header
-      {
+      .panel-header {
         background-color: #545d681f;
         padding: 10px;
         font-family: bold;
-        font-size: 13px; 
+        font-size: 13px;
       }
-      .tempData
-      {
-        h5
-        {
+      .tempData {
+        h5 {
           font-family: bold;
-          font-size: 13px; 
-          margin: 0 0 7px
+          font-size: 13px;
+          margin: 0 0 7px;
         }
-        p
-        {
+        p {
           font-size: 12px;
           margin: 0 0;
         }
+      }
+    }
+  }
+}
+
+.dark {
+  .sh-card {
+    background-color: #14161a !important;
+  }
+}
+.sh-card {
+  position: relative;
+  box-shadow: 0px 2px 3px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: 0.1s linear;
+  &.fluid {
+    border-radius: 0px;
+    box-shadow: none;
+  }
+  .sh-display {
+    position: relative;
+    padding-top: 60%;
+    border-radius: 7px 7px 0 0;
+    img {
+      border-radius: 7px 7px 0 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .sh-info {
+    padding: 15px;
+    h6 {
+      font-size: 17px;
+      font-family: bold;
+      margin: 0;
+      line-height: 14px;
+    }
+    span {
+      opacity: 0.65;
+      font-size: 13px;
+    }
+    .date {
+      color: $red;
+      font-size: 14px;
+      font-family: bold;
+      display: block;
+      margin: 0 0px;
+      @media (min-width:731px) {
+        display: none;
+      }
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 15px 0;
+      li {
+        flex-grow: 1;
+        text-align: center;
+        padding: 5px;
+        background-color: #74808d2e;
+        border-radius: 5px;
+        width: 100%;
+        max-width: calc(33% - 5px);
+        font-size: 14px;
+      }
+    }
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #6b788a;
+      margin: 0 0 5px;
+      font-family: medium;
+      border-bottom: 1px solid #8d8d8d30;
+      padding-bottom: 5px;
+      strong {
+        font-family: ub;
+      }
+    }
+    .links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+      a {
+        flex-grow: 1;
+        text-align: center;
+        display: inline-block;
+        padding: 7px;
+        color: #fff;
+        text-decoration: none;
+        transition: 0.12s linear;
+        border-radius: 3px;
+        width: 50%;
+        max-width: calc(50% - 10px);
+        font-size: 12px;
+        text-transform: uppercase;
+        font-family: bold;
+        position: relative;
+        i {
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+}
+
+
+.showingTimeline
+{
+  position: relative;
+  padding-top: 45px;
+  .bar
+  {
+    height:calc(100% - 30px);
+    width:0px;
+    border-left:1px solid #5c697c29;
+    left: 50%;
+    top:0px;
+    position: absolute;
+    margin-top: 30px;
+    @media(max-width:730px)
+    {
+      left: 10px;
+    }
+    .date
+    {
+      position: absolute;
+      white-space: nowrap;
+      left: 0;
+      transform: translate(-50%, -100%);
+      top: 0px;
+      padding: 5px 10px;
+      background: #f1f3f4;
+      border-radius: 7px;
+      font-size: 14px;
+      font-family: 'ub';
+      @media(max-width:730px)
+      {
+        transform: translate(-10px, -100%);
+      }
+    }
+  }
+  .sh-card
+  {
+    max-width: 300px;
+    min-width: 300px;
+    margin-bottom: 20px;
+    overflow: visible;
+    .knot
+    {
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background-color: $red;
+      color:#fff;
+      font-size: 16px;
+      padding: 2px 0;
+      font-family: ub;
+      height: 28px;
+      width: 28px;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0px 0px 3px 0px rgba(0,0,0,.3);
+      .time
+      {
+        position:absolute;
+        color:$red;
+        font-family: ub;
+        font-size: 14px;
+        white-space: nowrap;
+        top: 2px;
+        @media(max-width:730px)
+        {
+          display: none;
+        }
+      }
+    }
+    &.left
+    {
+      transform: translateX(calc(-50% - 30px));
+      @media(max-width:730px)
+      {
+        transform: translateX(calc(0% + 40px));
+      }
+      .knot
+      {
+        right: -44px;
+        @media(max-width:730px)
+        {
+          right: auto;  
+          left: -43px;
+        }
+        .time
+        {
+          transform: translateX(20px);
+        }
+      }
+    }
+    &.right
+    {
+      transform: translateX(calc(50% + 30px));
+      @media(max-width:730px)
+      {
+        transform: translateX(calc(0% + 40px));
+      }
+      .knot
+      {
+        left: -44px;
+        @media(max-width:730px)
+        {
+          right: auto;  
+          left: -43px;
+        }
+        .time
+        {
+          transform: translateX(calc(-100% - 30px));
+        }
+      }
+    }
+  }
+  > .d-flex
+  {
+    align-items: center;
+    flex-direction: column;
+    @media(max-width:730px)
+    {
+      align-items: flex-start;  
+    }
+  }
+}
+
+.dark
+{
+  .showingTimeline
+  {
+    .bar
+    {
+      .date
+      {
+        background-color: #222733;
       }
     }
   }
