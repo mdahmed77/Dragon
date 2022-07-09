@@ -618,12 +618,182 @@
             </div>
           </div>
         </div>
-        <div class="footer">
+        <div class="footer mb-4">
           <img src="assets/images/footer.png" alt="">
+          <div class="fStick">
+            <!-- <a href="#quickUpload" data-bs-toggle="modal" class="uploads"><i class="fal fa-upload"></i> Quick Upload</a>
+            <a href="#quickNotes" data-bs-toggle="modal" class="notes"><i class="fal fa-edit"></i> Notes</a> -->
+            <a data-bs-toggle="offcanvas" href="#uploadsCanvas" role="button" class="uploads"><i class="fal fa-upload"></i> Quick Upload</a>
+            <a data-bs-toggle="offcanvas" href="#notesCanvas" role="button" class="notes"><i class="fal fa-edit"></i> Notes</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="notesCanvas" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Notes List <button data-bs-target="#quickNotes" data-bs-toggle="modal" class="btn btn-prime dark-text ms-2 py-1"><i class="far fa-plus"></i> Add New</button></h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <table class="table table-bordered table-hover dataTable" width="100%">
+        <thead>
+          <tr>
+            <th>Note</th>
+            <th style="width: 60px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lorem Ipsum doler siet is a dummy text that we are using afot this website you can change it later ok change it later ok</td>
+            <td><a href="#" class="btn btn-link text-danger"><i class="far fa-trash-alt"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="uploadsCanvas" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Quick Uploads <button data-bs-target="#quickUpload" data-bs-toggle="modal" class="btn btn-prime dark-text ms-2 py-1"><i class="far fa-plus"></i> New Upload</button></h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <table class="table table-bordered table-hover dataTable" width="100%">
+        <thead>
+          <tr>
+            <th>Note</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#" target="_blank">Document Name Goes Here</a></td>
+            <td>
+              <a href="#" class="linked">Assing to Contacts</a>
+              <a href="#" class="linked ms-2">Assing to Transaction</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  
+    <!-- Modal -->
+    <div
+      class="modal"
+      id="quickUpload"
+      tabindex="-1"
+      aria-labelledby="appoint"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Quick Upload</h5>
+            <button
+              type="button"
+              class="btn-close dark-text"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="far fa-times"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="" class="form">
+              <div class="row">
+                <div class="col-lg-6 col-12">
+                  <div class="form-group">
+                    <label for="">Title</label>
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                  <div class="form-group">
+                    <label for="">Attach File</label>
+                    <input type="file" class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="btns d-flex">
+              <button
+                type="button"
+                class="btn btn-prime dark-text me-2"
+                data-bs-dismiss="modal"
+              >
+                <i class="far fa-times"></i> Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-prime dark-text"
+                data-bs-dismiss="modal"
+              >
+                <i class="far fa-upload"></i> Upload
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal"
+      id="quickNotes"
+      tabindex="-1"
+      aria-labelledby="appoint"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Notes</h5>
+            <button
+              type="button"
+              class="btn-close dark-text"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="far fa-times"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="" class="form">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="">Write Note</label>
+                    <textarea rows="4" class="form-control"></textarea>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="btns d-flex">
+              <button
+                type="button"
+                class="btn btn-prime dark-text me-2"
+                data-bs-dismiss="modal"
+              >
+                <i class="far fa-times"></i> Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-prime dark-text"
+                data-bs-dismiss="modal"
+              >
+                <i class="far fa-save"></i> Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <script src="assets/js/jquery.js"></script>
   <script src="assets/js/bootstrap.js"></script>
