@@ -1378,16 +1378,42 @@
             </div>
             <textarea
               class="postText"
-              rows="4"
               placeholder="What's on your mind, Ryan?"
             ></textarea>
+
+            <!-- FILE UPLOADER -->
+            <div class="fileUploader d-none">
+              <button class="btn" id="close-uploader">
+                <i class="fal fa-times"></i>
+              </button>
+              <div class="fu-wrap">
+                <input id="file-input" type="file" name="file" multiple />
+                <div class="addIcon">
+                  <i class="fal fa-file-plus"></i>
+                </div>
+                <strong>Add Photos/Videos</strong>
+              </div>
+              <div class="files d-none">
+                <img
+                  src="assets/images/customer-bg.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <img
+                  src="assets/images/after.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+
             <div class="edibles">
               <h6 class="dark-text">Add to your post</h6>
               <div class="d-inline-flex">
-                <a href="#"
+                <a class="showUploader"
                   ><img src="assets/images/uploadPhotos.png" alt=""
                 /></a>
-                <a href="#"><img src="assets/images/tag.png" alt="" /></a>
+                <a><img src="assets/images/tag.png" alt="" /></a>
                 <a href="#"><img src="assets/images/mapMarker.png" alt="" /></a>
                 <a href="#"><i class="fas fa-ellipsis-h"></i></a>
               </div>
@@ -1404,6 +1430,7 @@
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/owl.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/fileUploader.js"></script>
 
     <script>
       $(document).ready(function () {
@@ -1424,6 +1451,35 @@
             },
           },
         });
+
+
+        var file = document.getElementById("file-input");
+        function IsInputFileEmpty() {
+          if (file.files.length == 0) {
+            $(".files").removeClass("haveFiles").addClass('d-none')
+          } else {
+            $(".files").addClass("haveFiles").removeClass("d-none")
+          }
+        }
+
+        $(".showUploader").on("click", function () {
+          $(".fileUploader").removeClass("d-none");
+          $(".postText").addClass("slim");
+        });
+        $("#close-uploader").on("click", function () {
+          $(".fileUploader").addClass("d-none");
+          $(".postText").removeClass("slim");
+          $('#file-input').val(''); 
+          $(".files").removeClass("haveFiles").addClass('d-none');
+          $(".fu-wrap").removeClass("d-none");
+        });
+        $('#file-input').on('change', function(){
+          IsInputFileEmpty();
+          if ($(".files").hasClass("haveFiles")) {
+            $(".fu-wrap").addClass("d-none");
+          }
+        });
+        
 
         $(".postLike input").each(function () {
           $(this).on("click", function () {

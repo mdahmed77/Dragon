@@ -1931,72 +1931,185 @@ div.dataTables_wrapper div.dataTables_info {
     font-family: regular;
     width: 100%;
     background-color: transparent !important;
+    min-height: 150px;
+    transition: font-size 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    &.slim {
+      font-size: 15px;
+      min-height: 0px;
+    }
   }
   .edibles {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border:1px solid #ddd;
+    border: 1px solid #ddd;
     border-radius: 7px;
     padding: 10px 10px 10px 15px;
     margin-top: 10px;
-    box-shadow:0px 2px 2px 0 rgba(0,0,0,.1);
-    transition: .1s linear;
+    box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.1);
+    transition: 0.1s linear;
     h6 {
       font-family: bold;
       font-size: 14px;
       margin: 0;
     }
-    .d-inline-flex
-    {
+    .d-inline-flex {
       align-items: center;
     }
-    a{
+    a {
       padding: 5px 12px;
-      color:#333;
+      color: #333;
+      cursor: pointer;
       img {
         width: 26px;
         height: auto;
       }
-      font-size:18px;
+      font-size: 18px;
     }
   }
-  .btn-prime
-  {
+  .btn-prime {
     margin-top: 15px;
     font-size: 15px;
     padding: 10px !important;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     border-radius: 7px;
   }
+  // FILE UPLOADER CSS
+  .fileUploader {
+    border-radius: 5px;
+    border: 1px solid #d4d7dc;
+    padding: 10px;
+    margin: 15px 0;
+    position: relative;
+    #close-uploader {
+      height: 30px;
+      width: 30px;
+      border-radius: 50px;
+      background-color: #dee3e7;
+      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.1s linear;
+      justify-content: center;
+      position: absolute;
+      z-index: 15;
+      top: 20px;
+      right: 20px;
+      &:hover {
+        background-color: $red;
+        color: #fff;
+      }
+      i {
+        transition: none;
+        &::after,
+        &::before {
+          transition: none;
+        }
+      }
+    }
+    .files {
+      border-radius: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      max-height: 40vh;
+      overflow-y: overlay;
+      position: relative;
+      &::-webkit-scrollbar {
+        width: 5px;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $red;
+        border-radius: 0px;
+        transition: 0.2s linear;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+    }
+    .files > img,
+    .files > video {
+      flex: 1;
+      flex-basis: 33%;
+      width: 33%;
+      object-fit: cover;
+    }
+    .fu-wrap {
+      background-color: #f4f6f7;
+      padding: 50px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 5px;
+      // cursor: pointer;
+      position: relative;
+    }
+    #file-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 5;
+    }
+
+    .addIcon {
+      height: 40px;
+      width: 40px;
+      border-radius: 50px;
+      background-color: #dee3e7;
+      font-size: 24px;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.1s linear;
+      justify-content: center;
+      i {
+        transition: none;
+        &::after,
+        &::before {
+          transition: none;
+        }
+      }
+    }
+    #file-input:hover + .addIcon {
+      color: #fff !important;
+      background-color: #28acff !important;
+    }
+    strong {
+      font-family: bold;
+      display: block;
+      font-size: 16px;
+      margin: 10px 0 0;
+    }
+  }
 }
-.dark-modal.modal.cpModal{
-  .modal-header
-  {
+.dark-modal.modal.cpModal {
+  .modal-header {
     background-color: #181b20;
     border-bottom: 1px solid #21242a;
-    .btn-close
-    {
+    .btn-close {
       background-color: #111214;
     }
   }
-  .modal-body
-  {
-    .postText
-    {
-      color:#fff;
+  .modal-body {
+    .postText {
+      color: #fff;
     }
-    .audienceTag
-    {
+    .audienceTag {
       background-color: #262d38;
     }
-    .edibles
-    {
-      border:1px solid #2c3239;
+    .edibles {
+      border: 1px solid #2c3239;
     }
   }
 }
-
 
 .feed {
   max-width: 600px;
