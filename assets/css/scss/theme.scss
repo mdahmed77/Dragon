@@ -264,10 +264,10 @@ div.dataTables_wrapper div.dataTables_info {
     background-color: #232c36 !important;
   }
   table.dataTable {
-    tr.odd td {
+    tr.odd {
       background-color: #14161a;
     }
-    tr.even td {
+    tr.even {
       background-color: #1a1e24;
     }
   }
@@ -2501,13 +2501,11 @@ div.dataTables_wrapper div.dataTables_info {
     font-weight: 400;
     position: absolute;
     z-index: 100;
-    top: 6px;
     color: #323232;
     font-size: 16px;
     right: 8px;
-    @media (max-width: 991px) {
-      top: 3px;
-    }
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
@@ -3587,6 +3585,10 @@ div.dataTables_wrapper div.dataTables_info {
         border: 1px solid #ccc;
         border-radius: 0px;
         font-size: 12px;
+        &.fc-lg{
+          font-size: 14px;
+          min-height: 42px;
+        }
       }
     }
     .mailTag {
@@ -3650,6 +3652,129 @@ div.dataTables_wrapper div.dataTables_info {
         }
       }
     }
+    .propResults {
+      background-color: #10161ecf !important;
+      .propSingle {
+        &:hover {
+          background-color: #000;
+        }
+        .propInf {
+          h6 {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .search {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    padding: 5px 5px;
+    background-color: #fff;
+    border:1px solid #ddd;
+    border-radius: 0px;
+    position: relative;
+    &.light-text {
+      background-color: #000;
+      border:1px solid #333;
+      input {
+        color: #fff;
+      }
+    }
+    input {
+      border: none;
+      background-color: transparent;
+      padding: 0px;
+      width: 100% !important;
+      flex-grow: 1 !important;
+      outline: none;
+      font-size: 14px;
+      font-family: medium;
+      min-width: 275px;
+      padding: 1px 12px 0px;
+    }
+    .btn {
+      font-size: 14px;
+      padding: 0px;
+      border-radius: 0px;
+      min-width: 10px;
+      color: #fff !important;
+      padding: 8px 6px 8px 8px !important;
+      i {
+        position: relative;
+        right: -1px;
+      }
+    }
+  }
+  .propSingle.selectedProp {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    transition: 0.1s linear;
+    background-color: transparent;
+    border-radius: 5px;
+    img {
+      margin-right: 10px;
+      height: 85px;
+      width: 85px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 5px;
+    }
+    .fa-user-circle {
+      font-size: 32px;
+      margin-right: 10px;
+      & ~ .propInf {
+        p {
+          margin-bottom: 0px;
+        }
+      }
+    }
+    .propInf {
+      h6 {
+        font-family: ub;
+        margin: 0px;
+        font-size: 17px;
+        position: relative;
+        top: -2px;
+      }
+      p {
+        font-size: 12px;
+        margin: 0px 0 5px;
+        font-family: medium;
+        opacity: 0.7;
+      }
+      .status {
+        font-family: medium;
+        letter-spacing: 0.5px;
+        font-size: 10px;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 3px 5px;
+        border-radius: 3px;
+        &.closed {
+          background-color: $red;
+        }
+        &.active {
+          background-color: #00894d;
+        }
+        &.pending {
+          background-color: #0086dd;
+        }
+      }
+    }
+    .btn-prime {
+      margin-left: auto;
+      font-size: 12px;
+      min-width: 70px;
+    }
+  }
+  .reSearch
+  {
+    cursor: pointer;
   }
 }
 
