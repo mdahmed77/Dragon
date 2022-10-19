@@ -21,8 +21,7 @@
     <div class="presentationDetail">
       <div class="pBanner">
         <div class="text">
-          <h3>Woosedge South Comps</h3>
-          <p>Here is the most recent in Woosedge South</p>
+          <h3 class="m-0">Woosedge South Comps</h3>
         </div>
         <div class="agent">
           <img src="assets/images/avatar.jpg" class="thumb" alt="" />
@@ -32,6 +31,7 @@
           <h6>cstills@allrize.com</h6>
         </div>
       </div>
+      <p class="display-text">Here is the most recent in Woosedge South</p>
       <h1 class="notchTitle">Section Title Goes here</h1>
       <div class="pAttachs">
         <div class="row">
@@ -286,6 +286,17 @@
       </div>
     </div>
 
+    <style>
+      .display-text {
+        text-align: center;
+        font-size: 24px;
+        font-family: regular;
+        font-weight: 400;
+        padding: 25px 0;
+        background-color: aliceblue;
+      }
+    </style>
+
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/jui.js"></script>
@@ -313,10 +324,10 @@
           $(".iviewer img").attr("src", "").css("opacity", "0");
         });
         $(function () {
-          $( ".pAttachs .row" ).sortable({
+          $(".pAttachs .row").sortable({
             revert: true,
             containment: "body",
-            cancel: ".no"
+            cancel: ".no",
           });
           // $(".pAttachs .row > div").draggable({
           //   connectToSortable: "#sortable",
